@@ -3,6 +3,7 @@ dist: trusty
 language: ruby
 bundler_args: --without benchmarks development
 # Pin Rubygems to a working version. Sometimes it breaks upstream. Update now and then.
+#
 before_install:
   - gem --version
   - gem update --system 2.6.7
@@ -20,6 +21,7 @@ addons:
 rvm:
   - 2.3
 matrix:
+  include:
     - rvm: 2.3.1
       env: DB=mysql57
       addons:
